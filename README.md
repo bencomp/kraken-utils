@@ -14,6 +14,7 @@ and visualising the segmentation using a kraken-provided script:
 
 ```sh
 find . -name "*_page_bl_ocr.xml" | parallel 'saxon -s:{} -xsl:/path/to/kraken-util/remove-glyph.xsl -o:{.}_clean.xml'
+find . -name "*_page_bl_ocr_nfd.xml" | parallel 'saxon -s:{} -xsl:/path/to/kraken-util/remove-glyph.xsl -o:{.}_clean.xml'
 find . -name "*_page_bl_ocr_clean.xml" | parallel 'python /path/to/kraken/kraken/contrib/segmentation_overlay.py {}'
 ```
 
